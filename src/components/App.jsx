@@ -12,13 +12,16 @@ const App = () => {
   const handleFeedback = option => {
     switch (option) {
       case 'good':
-        return setGood(prevGood => prevGood + 1);
+        setGood(prevGood => prevGood + 1);
+        break;
       case 'neutral':
-        return setNeutral(prevNeutral => prevNeutral + 1);
+        setNeutral(prevNeutral => prevNeutral + 1);
+        break;
       case 'bad':
-        return setBad(prevBad => prevBad + 1);
+        setBad(prevBad => prevBad + 1);
+        break;
       default:
-        return;
+        throw new Error('Unexpected token');
     }
   };
   const countTotalFeedback = () => {
